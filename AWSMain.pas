@@ -59,6 +59,9 @@ begin
     Writeln(Format('%s is offline!', [Ip]));
     WinExec(PAnsiChar(AnsiString(FAdbPath + ' disconnect '+Ip)), SW_NORMAL);
   end;
+
+  ///connect is async£¬so wait
+  Sleep(1000);
   WinExec(PAnsiChar(AnsiString(FAdbPath + ' devices')), SW_NORMAL);
 end;
 
